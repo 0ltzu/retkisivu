@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retkeily ja patikointi Suomessa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Bootstrap JS ja jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+    
+</head>
+
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Retkeily ja patikointi Suomessa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#osio1End">Retkireitit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#osio2End">Varusteet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#osio3End">Vinkit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#osio4">Lomake</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#osio5">Yhteystiedot</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Etusivu  -->
+    <section id="etusivu" class="d-flex justify-content-center align-items-center text-center text-light" style="background-image: url('Etusivu.jpg'); height: 100vh; background-size: cover;">
+        <div class="overlay">
+            <div class="content">
+                <h1>Tervetuloa Suomessa retkeilevän ykköslähteelle!</h1>
+                <br>
+                <p>Haluatko löytää upeita retkeilyreittejä, oppia hyödyllisiä varustevinkkejä
+                    ja varmistaa turvallisuutesi luonnossa? <strong>Retkeily ja Patikointi Suomessa</strong>
+                    tarjoaa kaiken tarvitsemasi, olitpa sitten aloittelija tai kokenut vaeltaja.</p>
+            </div>
+        </div>
+        
+    </section>
+
+    <div id="osio1End" class="section-end"></div>
+    <section id="osio1" class="container col-10 col-lg-6 col-md-4 col-sm-12 text-center mt-5">
+        
+        <h1 class="mb-4">Retkeily- ja Patikointireitit</h1>
+    
+        <!-- Navigointipalkki -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="reittiNav">
+            <li class="nav-item">
+                <button class="nav-link  active" onclick="vaihdaReitit('suosituimmat')">Suosituimmat</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link " onclick="vaihdaReitit('perhe')">Perheystävälliset</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link " onclick="vaihdaReitit('haastavat')">Haastavat</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link " onclick="vaihdaReitit('yleiset')">Yleiset kohteet</button>
+            </li>
+        </ul>
+    
+        <!-- Reittisivun eri sisällöt -->
+        <div class="reitti-slider">
+            <div class="reitti-container">
+                <div class="reitti-content" id="reittiSisalto">
+                    <!-- Suosituimmat reitit ensimmäisenä sivuna -->
+                    <div class="reitti-item card bg-light p-4 h-100" id="suosituimmat">
+                        <h4 class="mb-3">Suosituimmat retkeilykohteet</h4>
+                        <p>Suomen suosituimmat retkeilykohteet tarjoavat upeita maisemia ja monipuolisia reittejä. 
+                            <strong>Urho Kekkosen kansallispuistossa</strong> pääset tunturivaellukselle, 
+                            <strong>Oulangan kansallispuistossa</strong> voit kulkea legendaarisen Karhunkierroksen ja 
+                            <strong>Nuuksiossa</strong> retkeily onnistuu kätevästi pääkaupunkiseudulta käsin. 
+                            <strong>Koli</strong> puolestaan tarjoaa henkeäsalpaavat kansallismaisemat joka vuodenajalle. 
+                            Lisäksi <strong>Pallas-Yllästunturin</strong> kansallispuisto on yksi Suomen vanhimpia ja suosituimpia vaelluskohteita.
+                        </p>
+                        <p>Lisää tietoa suosituista kohteista löydät <a href="https://www.luontoon.fi" target="_blank">Luontoon.fi-sivustolta</a>.</p>
+                    </div>
+                    
+                    <div class="reitti-item card bg-light p-4 h-100" id="perhe" style="display: none;">
+                        <h4 class="mb-3">Perheystävälliset reitit</h4>
+                        <p>Helposti saavutettavat ja selkeät reitit sopivat koko perheelle. 
+                            <strong>Nuuksion Haukkalampi</strong> on ihanteellinen päiväretkikohde, 
+                            <strong>Seurasaari Helsingissä</strong> yhdistää luonnon ja kulttuurin, ja 
+                            <strong>Repoveden kansallispuiston riippusilta</strong> tarjoaa unohtumattoman elämyksen. 
+                            Myös <strong>Leivonmäen</strong> kansallispuisto tarjoaa helppoja ja kauniita reittejä lapsille.
+                        </p>
+                        <p>Monissa kohteissa on laavuja ja nuotiopaikkoja, joissa voi nauttia eväitä luonnon helmassa. 
+                            Löydä lisää perheystävällisiä retkikohteita <a href="https://www.retkikartta.fi" target="_blank">Retkikartta.fi-palvelusta</a>.</p>
+                    </div>
+                    
+                    <div class="reitti-item card bg-light p-4 h-100" id="haastavat" style="display: none;">
+                        <h4 class="mb-3">Haastavat reitit</h4>
+                        <p>Kaipaatko haastetta? 
+                            <strong>Karhunkierros (Oulanka)</strong> ja <strong>Hetta-Pallas (Pallas-Yllästunturi)</strong> tarjoavat vaativia, mutta palkitsevia maisemia. 
+                            <strong>Haltiin nouseminen</strong> on Suomen korkeimman kohdan tavoittelijoille unohtumaton kokemus, ja 
+                            <strong>Helvetinjärven kansallispuiston</strong> rotkolaaksot tarjoavat vaativampia polkuja. 
+                            Myös <strong>Pyhä-Luoston</strong> vaellusreitit ja <strong>Syötteen kansallispuisto</strong> tarjoavat haasteita kokeneemmille retkeilijöille.
+                        </p>
+                        <p>Katso lisää vaellusreittejä ja karttoja <a href="https://www.retkikartta.fi" target="_blank">Retkikartta.fi-palvelusta</a>.</p>
+                    </div>
+                    
+                    <div class="reitti-item card bg-light p-4 h-100" id="yleiset" style="display: none;">
+                        <h4 class="mb-3">Yleisesti retkikohteista</h4>
+                        <p>Olitpa sitten saaristossa, tuntureilla tai metsäisillä luontopoluilla, Suomesta löytyy upeita ulkoilukohteita. 
+                            <strong>Saaristomeren kansallispuisto</strong> on täydellinen vesiretkeilyyn, 
+                            <strong>Teijon kansallispuisto</strong> yhdistää meri- ja metsämaisemat, ja 
+                            <strong>Örön saari</strong> vie keskelle historiaa ja kaunista meriluontoa. 
+                            <strong>Riisitunturin</strong> kansallispuisto taas on kuuluisa talvisten tykkylumimaisemiensa ansiosta.
+                        </p>
+                        <p>Lähiluonnosta voi nauttia jokaisessa kaupungissa – usein lähin retkipaikka löytyy yllättävän läheltä! 
+                            Lisää vinkkejä retkeilyyn ja matkailuun löydät <a href="https://www.visitfinland.com" target="_blank">Visit Finland -sivustolta</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Osio 2 Retkeilyn varusteet -->
+    <div id="osio2End" class="section-end"></div>
+<section id="osio2" class="container text-center mt-5">
+    <h1 class="mb-4">Retkeilyyn tarvittavat varusteet</h1>
+
+    <div class="row justify-content-center">
+
+        <!-- Perusvarusteet -->
+        <div class="col-10 col-lg-3 col-md-3 col-sm-4 card p-3 h-100 mt-4 ms-4 me-4">
+            <img src="varusteita.jpg" class="img-fluid varuste-img" alt="Perusvarusteet">
+            <br>
+            <h4 >Perusvarusteet</h4>
+            <p >Retkeilyn perusvarusteisiin kuuluvat mm. rinkka, kengät, vaatteet ja ruoanlaittovälineet.</p>
+            
+            <h6>Vinkkejä perusvarusteiden valintaan:</h6>
+            <ul>
+                <li><strong>Hyvät kengät:</strong> Vedenpitävät ja tukevat kengät ovat välttämättömät pitkille reiteille ja vaihtelevaan maastoon.</li>
+                <li><strong>Säänmukainen vaatetus:</strong> Kerrospukeutuminen takaa mukavuuden kaikissa sääolosuhteissa. Muista, että säänvaihtelut voivat olla arvaamattomia.</li>
+                <li><strong>Reppu:</strong> Valitse riittävän kokoinen reppu, joka on mukava kantaa ja johon mahtuu kaikki tarpeellinen.</li>
+                <li><strong>Juomapullo ja eväät:</strong> Pidä huolta energiasta ja nesteytyksestä pitkillä vaelluksilla. Varaa tarpeeksi vettä ja reilusti välipaloja.</li>
+            </ul>
+        </div>
+
+        <!-- Yöpymisvarusteet -->
+        <div class="col-10 col-lg-3 col-md-4 col-sm-12 card p-3 h-100 mt-4 ms-3 me-3">
+            <img src="retkeily yöpymiskuva.jpg" class="img-fluid varuste-img" alt="Yöpymisvarusteet">
+            <br>
+            <h4 >Yöpymisvarusteet</h4>
+            <p >Hyvä yöpymisvarustus sisältää teltan, makuupussin ja makuualustan mukavaan lepoon.</p>
+
+            <h6>Yöpymisvarusteet tarkemmin:</h6>
+            <ul>
+                <li><strong>Teltta tai riippumatto:</strong> Valitse maaston ja vuodenajan mukaan sopiva majoitusvaihtoehto.</li>
+                <li><strong>Makuupussi ja -alusta:</strong> Hyvä makuupussi pitää sinut lämpimänä ja mukavana yöllä, ja alusta eristää maasta tulevaa kylmyyttä.</li>
+                <li><strong>Retkikeitin ja polttoaine:</strong> Ruokailu luonnossa on helppoa, kun mukana on keitin ja polttoaine. Valitse polttoaine, joka sopii varusteisiisi.</li>
+            </ul>
+        </div>
+
+        <!-- Turvallisuus ja suunnistus -->
+        <div class="col-10 col-lg-4 col-md-4 col-sm-12 card  p-3 h-100 mt-4 ms-3 me-3">
+            <img src="Pienempi 10-30pros kuva.jpg" class="img-fluid varuste-img" alt="Turvallisuus ja suunnistus">
+            <br>
+            <h4 >Turvallisuus ja suunnistus</h4>
+            <p >Suunnistusvälineet, ensiaputarvikkeet ja hätävarusteet tekevät retkeilystä turvallista.</p>
+
+            <h6>Turvallisuus ja suunnistus varusteet:</h6>
+            <ul>
+                <li><strong>Kartta ja kompassi:</strong> Vaikka GPS on kätevä, on aina hyvä olla mukana paperikartta ja kompassi, jos teknologia pettää.</li>
+                <li><strong>Ensiapupakkaus:</strong> Varmista, että mukana on pieni, mutta kattava ensiapulaukku, joka sisältää perusvälineet haavojen ja muiden vammojen hoitoon.</li>
+                <li><strong>Taskulamppu tai otsalamppu:</strong> Taskulamppu tai otsalamppu on ehdoton pimeässä liikkumiseen. Muista varata varaparistot!</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Osio 3 erilaiset vinkit retkeilyyn -->
+    <div id="osio3End" class="section-end"></div>
+    <section id="osio3" class="container text-center mt-5">
+    <h1 class="mb-4">Hyödyllisiä vinkkejä retkeilyyn</h1>
+    
+    <!-- Kuva -->
+    <div class="osio3-image-container bg-light my-4 p-4 col-10 col-lg-12 col-md-12 col-sm-12">
+        <img src="Iso 60-90 pros kuva.jpg" alt="Retkeilykuva" class="img-fluid">
+    </div>
+    
+    <!-- Kortit -->
+    <div class="row g-4 varusteet-content">
+        
+        <div class="row g-4">
+            <!-- Ensimmäinen kortti keskellä ylimpänä -->
+            <div class="col-12 col-md-12">
+                <div class="card bg-light p-3 shadow rounded">
+                    
+                    <h3>Varautuminen eri vuodenaikoina</h3>
+                    <p>Muista oikeanlaiset varusteet eri vuodenajoille.</p>
+        
+                    
+                    <!-- Vuodenaika Navigointipalkki -->
+                    <ul class="nav nav-pills mb-4 justify-content-center" id="varautuminenNav" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active btn-primary" id="talvi-tab" data-bs-toggle="pill" data-bs-target="#talvi" role="tab" aria-controls="talvi" aria-selected="true">Talvi</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn-primary" id="kevat-tab" data-bs-toggle="pill" data-bs-target="#kevat" role="tab" aria-controls="kevat" aria-selected="false">Kevät</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn-primary" id="kesa-tab" data-bs-toggle="pill" data-bs-target="#kesa" role="tab" aria-controls="kesa" aria-selected="false">Kesä</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link btn-primary" id="syksy-tab" data-bs-toggle="pill" data-bs-target="#syksy" role="tab" aria-controls="syksy" aria-selected="false">Syksy</button>
+                        </li>
+                    </ul>
+
+        
+                    <!-- Vuodenaikojen sisällöt -->
+                    <div class="tab-content" id="vuodenaikaTabContent">
+                        <!-- Talvi -->
+                        <div class="tab-pane fade show active" id="talvi" role="tabpanel" aria-labelledby="talvi-tab">
+                            <h3>Talvi – Pakkasen ja lumen keskellä</h3>
+                            <p>Talviretkeily tarjoaa ainutlaatuisia elämyksiä, mutta se vaatii huolellista valmistautumista. Lumiset reitit, kylmät lämpötilat ja lyhyet päivät asettavat omat haasteensa, mutta oikeilla varusteilla retkeilystä voi nauttia turvallisesti ja mukavasti.</p>
+                            <ul>
+                                <li><strong>Lämpimät vaatteet</strong>: Aluskerrasto (merinovilla), eristävä välikerros (fleece tai untuva), ja tuulenpitävä kuorikerros.</li>
+                                <li><strong>Lämpimät kengät</strong>: Talvikengät tai vaelluskengät lämpimillä sukilla.</li>
+                                <li><strong>Hanskat ja pipo</strong>: Sormet ja korvat paleltuvat nopeasti kylmässä, joten lämpimät hanskat ja pipo ovat välttämättömiä.</li>
+                                <li><strong>Termospullo</strong>: Kuuma juoma pitää sinut lämpimänä ja auttaa jaksamaan pitkän päivän.</li>
+                                <li><strong>Retkikeitin</strong>: Mahdollistaa lämpimän ruoan valmistamisen myös pakkasessa.</li>
+                                <li><strong>Lumikengät tai sukset</strong>: Umpihangessa liikkuminen onnistuu paremmin lumikenkiä tai metsäsuksia käyttäen.</li>
+                                <li><strong>Varavirtalähde</strong>: Kylmä sää voi nopeasti kuluttaa elektronisten laitteiden akkuja.</li>
+                            </ul>
+                            <p>Talviretkeilyn huippuelämyksiä ovat revontulet, hiljaiset lumiset metsät ja mahdollisuus kokeilla talvitelttailua.</p>
+                        </div>
+        
+                        <!-- Kevät -->
+                        <div class="tab-pane fade" id="kevat" role="tabpanel" aria-labelledby="kevat-tab">
+                            <h3>Kevät – Vaihteleva sää ja heräävä luonto</h3>
+                            <p>Kevät on luonteenomaista vaihtelevalle säätilalle, kun lumi sulaa ja maasto on välillä mudassa ja välillä jäässä. Päivän aikana lämpötilat voivat vaihdella suuresti, ja yöt voivat olla kylmiä. Kevät on täydellinen aika nauttia luonnon heräämisestä ja linnunlaulusta.</p>
+                            <ul>
+                                <li><strong>Vedenpitävät kengät</strong>: Suojaavat mutaisilla ja kosteilla reiteillä.</li>
+                                <li><strong>Tuulen- ja vedenpitävä kuoritakki</strong>: Pitää lämpimänä ja kuivana vaihtelevassa säässä.</li>
+                                <li><strong>Kevyet hanskat ja pipo</strong>: Aamu- ja iltahämärässä kevät voi olla viileä, joten nämä varusteet ovat hyödyllisiä.</li>
+                                <li><strong>Pitkävartiset sukat</strong>: Erityisesti metsissä, joissa on punkkien vaara.</li>
+                            </ul>
+                            <p>Kevätretkeilyn ilot ovat sulavat vesistöt, lintujen kevätmuutto ja vihertyvä luonto.</p>
+                        </div>
+        
+                        <!-- Kesä -->
+                        <div class="tab-pane fade" id="kesa"  aria-labelledby="kesa-tab">
+                            <h3>Kesä – Valoisaa ja lämmintä retkeilyä</h3>
+                            <p>Kesä on monille retkeilijöille mieluisin vuodenaika, sillä se tarjoaa pitkät, valoisat päivät ja lämpimän sään. Yöpymismahdollisuudet ovat monipuoliset: telttailu, riippumatossa nukkuminen ja laavulla yöpyminen tekevät kesästä erinomaisen ajan retkeillä.</p>
+                            <ul>
+                                <li><strong>Kevyet ja hengittävät vaatteet</strong>: Pysy viileänä helteellä kevyillä vaatteilla.</li>
+                                <li><strong>Hyönteissuojat</strong>: Pitkähihaiset vaatteet ja hyönteissuojat pitävät hyttyset ja paarmat loitolla.</li>
+                                <li><strong>Aurinkosuojaus</strong>: Aurinkorasva ja päähine suojaavat auringolta, erityisesti avomaastossa liikuttaessa.</li>
+                                <li><strong>Riittävä nesteytys</strong>: Muista ottaa mukaan riittävästi vettä kuumina päivinä.</li>
+                            </ul>
+                            <p>Kesä tarjoaa täydelliset puitteet vesillä liikkumiseen, kuten melontaan ja uimiseen, sekä yön yli kestäville vaelluksille ja telttailulle.</p>
+                        </div>
+        
+                        <!-- Syksy -->
+                        <div class="tab-pane fade" id="syksy" role="tabpanel" aria-labelledby="syksy-tab">
+                            <h3>Syksy – Ruskan ja raikkaan ilman aikaa</h3>
+                            <p>Syksy on yksi upeimmista retkeilykausista, erityisesti Lapissa ruskan aikaan. Vaikka sää voi olla vaihtelevaa, syksyn raikkaat päivät ja kauniit värit tekevät retkeilystä erityisen nautittavaa.</p>
+                            <ul>
+                                <li><strong>Kerrospukeutuminen</strong>: Lämpökerrasto, fleece tai villapaita välikerrokseksi ja kuoritakki ulkokerrokseksi pitävät sinut lämpimänä vaihtelevassa säässä.</li>
+                                <li><strong>Vedenpitävät vaelluskengät ja vaihtosukat</strong>: Näin pärjäät hyvin kosteissa ja märissä oloissa.</li>
+                                <li><strong>Pipo ja hanskat</strong>: Syksy voi olla viileä heti alkukuukausista alkaen, joten nämä ovat tarpeellisia.</li>
+                                <li><strong>Otsalamppu</strong>: Pimeys laskeutuu nopeasti, ja otsalamppu on tarpeen iltaisin ja aamuisin.</li>
+                            </ul>
+                            <p>Syksy tarjoaa kauniit värit ja raikkaan ilman, mutta hyönteisiä on vähemmän, mikä tekee retkeilystä miellyttävämpää.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Etiketti ja turvallisuus-->
+        <div class="col-12 col-md-6">
+            <div class="card etiketti  bg-light p-3 h-100">
+                
+                <h3>Etiketti ja turvallisuus</h3>
+                <p>Pidä luonto siistinä ja noudata turvallisuusohjeita. Hyvin toimiva etiketti ja turvallisuus ovat tärkeitä, jotta retkeily on sekä miellyttävää että vastuullista kaikille luonnossa liikkujille.</p>
+                
+                <h6>Tärppejä turvalliseen retkeilyyn:</h6>
+                <ul>
+                    <li><strong>Roskat pois:</strong> Ota aina omat roskasi mukaan tai käytä alueen roskiksia. Vältä jätteiden jättämistä luontoon.</li>
+                    <li><strong>Turvallinen tulenteko:</strong> Tee tuli vain merkityillä paikoilla ja sammutus välineet on hyvä olla mukana. Muista sammuttaa tuli huolellisesti ennen alueelta poistumista.</li>
+                    <li><strong>Ensiapu:</strong> Ota mukaan ensiapupakkaus ja varmista, että tiedät, miten hoitaa pieniä haavoja ja palovammoja.</li>
+                    <li><strong>Reittien noudattaminen:</strong> Pysy merkityillä reiteillä ja vältä polkujen ulkopuolella liikkumista, jotta et vahingoita luonnon kasvillisuutta ja ekosysteemiä.</li>
+                    <li><strong>Vastuullinen eläinten kohtelu:</strong> Älä häiritse tai ruoki villieläimiä. Ne voivat olla arkoja, ja ruokinta voi aiheuttaa eläimille ongelmia.</li>
+                </ul>
+                
+                <h6>Muista myös:</h6>
+                <p><strong>Oikea pukeutuminen:</strong> Pukeudu sään mukaan ja ota mukaan säänmukaiset varusteet (esim. sadevaatteet ja lämpimät vaatteet kylmällä säällä). </p>
+                <p><strong>Vesi ja ruoka:</strong> Varmista, että sinulla on riittävästi vettä ja eväitä, erityisesti pidemmille retkille.</p>
+                <p><strong>Suunnistusvälineet:</strong> Varmista, että sinulla on tieto reitistä ja kartta, sekä kompassi mukana joiden avulla pystyt suunnistamaan luonnossa.</p>
+            </div>
+        </div>
+
+        <!-- Jokaisenoikeudet -->
+        <div class="col-12 col-md-6">
+            <div class="card jokamiehenoikeudet  bg-light p-3 h-100">
+                
+                <h3>Jokaisenoikeudet</h3>
+                <br>
+                <p>Suomessa jokaisenoikeudet sallivat luonnossa liikkumisen, mutta mukana tulee myös velvollisuuksia:</p>
+                <ul>
+                    <li><strong>Liikkuminen:</strong> Saat liikkua vapaasti luonnossa, mutta älä aiheuta haittaa.</li>
+                    <li><strong>Kasvillisuus:</strong> Saat poimia marjoja ja sieniä, mutta et vahingoittaa kasvillisuutta.</li>
+                    <li><strong>Tulenteko:</strong> Tulenteko sallittu vain merkityillä paikoilla.</li>
+                </ul>
+                <h5>Roskattomuus:</h5>
+                <p>Kaikki, mitä viet luontoon, tuo myös takaisin. Käytä retkeilyalueiden roskiksia tai vie jätteet kotiin.</p>
+                <h5>Villieläinten kunnioittaminen:</h5>
+                <p>Älä häiritse eläimiä tai ruoki niitä. Pysy merkityillä reiteillä estääksesi kasvillisuuden kulumista.</p>
+                <p><strong>Lisätiedot:</strong> Löydät kattavat tiedot Jokamiehenoikeuksista Suomen ympäristökeskuksen ja Metsähallituksen verkkosivuilta.</p>
+            </div>
+        </div>
+
+        <!-- Kalastus -->
+        <div class="col-12 col-md-6">
+            <div class="card kalastus   bg-light p-3 h-100">
+                
+                <h3>Kalastus</h3>
+                <br>
+                <p>Suomessa kalastus on suosittu ulkoilmaharrastus, mutta se vaatii tietämystä ja oikeat luvat.</p>
+                <h5>Tärpit kalastukseen:</h5>
+                <ul>
+                    <li><strong>Kalastusluvat:</strong> Muista hankkia tarvittavat kalastusluvat ennen kalastusta.</li>
+                    <li><strong>Parhaat kalastuspaikat:</strong> Suosittuja kalastuspaikkoja ovat järvet, joet ja merialueet, kuten Saimaa ja Päijänne.</li>
+                    <li><strong>Kaudenajat:</strong> Kalastuksen sesonki vaihtelee; kesä on aktiivisin aikakausi monille kalalajeille.</li>
+                </ul>
+                <p><strong>Lisätiedot:</strong> Katso tarkemmat säädökset ja luvat alueittain esimerkiksi Metsähallituksen tai kalastusalueiden verkkosivuilta.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card marjastus  bg-light p-3 h-100">
+                
+                <h3>Marjastus ja sienestys</h3>
+                <br>
+                <p>Suomessa luonnossa marjastus ja sienestys ovat suosittuja aktiviteetteja, joissa jokamiehenoikeudet antavat mahdollisuuden poimia luonnon antimia.</p>
+                <h6>Tärpit marjastukseen ja sienestykseen:</h6>
+                <ul>
+                    <li><strong>Oikeat lajit:</strong> Varmista, että tunnistat marjat ja sienet oikein ennen poimimista, jotta vältät myrkylliset lajit.</li>
+                    <li><strong>Parhaat ajankohdat:</strong> Kesä- ja syyskuut ovat parhaimmat kuukaudet marjastukseen ja sienestykseen, riippuen lajista.</li>
+                    <li><strong>Kestävä poiminta:</strong> Älä vahingoita kasvillisuutta tai häiritse ekosysteemiä poimiessasi. Pidä huolta, että jätät riittävästi sieniä ja marjoja luontoon.</li>
+                </ul>
+                <p><strong>Lisätiedot:</strong> Saat tarkempaa tietoa marjastuksesta ja sienestyksestä Luontoportin ja Metsähallituksen verkkosivuilta.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    <!-- Osio 4 -->
+    
+    <section id="osio4" class=" col-10 col-lg-12 col-md-12 col-sm-12 container text-center mt-5 p-4 rounded shadow" style="background-color: #66a3ff; color: black;">
+        <h2><strong>Osallistu kyselyyn ja voita retkikeitin!</strong></h2>
+        <p>Haluamme kuulla sinun retkeilykokemuksistasi! Vastaa lyhyeen kyselyyn ja osallistu arvontaan, jossa voit voittaa 
+            <strong>laadukkaan retkikeittimen!</strong></p>
+        <p>Kyselyyn vastaaminen vie vain muutaman minuutin. Kaikkien osallistujien kesken arvotaan retkikeitin.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-2" id="openModalBtn">Vastaa kyselyyn nyt!</a>
+    </section>
+
+    <!-- Kyselylomake -->
+    <div id="surveyModal"  class="modal fade" tabindex="-1" aria-labelledby="surveyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="surveyModalLabel">Retkeilykokemusten kysely</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="surveyForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nimi</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Sähköposti</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experience" class="form-label">Kuvaile retkeilykokemustasi</label>
+                            <textarea class="form-control" id="experience" rows="4" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" id="consent" required>
+                                Hyväksyn osallistumisehdot ja arvonnan.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Lähetä ja osallistu arvontaan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+    document.getElementById("openModalBtn").addEventListener("click", function(event){
+        event.preventDefault(); 
+        var surveyModal = new bootstrap.Modal(document.getElementById("surveyModal"));
+        surveyModal.show(); 
+    });
+
+
+    document.getElementById("surveyForm").addEventListener("submit", function(event){
+        event.preventDefault(); 
+
+        alert("Kiitos osallistumisestasi! Olet mukana arvonnassa.");
+        var surveyModal = bootstrap.Modal.getInstance(document.getElementById("surveyModal"));
+        surveyModal.hide(); 
+    });
+</script>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div id="osio5" class="container text-center">
+            <ul class="list-unstyled mb-3" style="left: auto;">
+                <li><strong>Yhteystiedot:</strong></li>
+                <li>Puheenjohtaja</li>
+                <li>Ritva Retkeilijä</li>
+                <li>Retkeily-Suomi liitto</li>
+                <li>Retkeilypolku 1, 101010 Helsinki</li>
+                <li>info@retkeilemaansuomessa.fi</li>
+            </ul>
+            <div class="social-icons mb-3">
+                <a class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                <a  class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                <a  class="text-light"><i class="fab fa-instagram"></i></a>
+                
+            </div>
+            
+                <p>&copy; 2025 Retkeilyverkkosivu.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

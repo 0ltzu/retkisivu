@@ -1,0 +1,403 @@
+
+section {
+    scroll-margin-top: 80px; 
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#osio1 {
+    scroll-margin-top: 80px; 
+}
+
+/* Navigointipalkki */
+nav {
+    background-color: #333;
+    border-radius: 0 0 8px 8px; 
+    padding: 8px 20px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; 
+}
+
+/* Navigointipalkin tyyli */
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white; 
+}
+
+/* Navigointilinkit */
+.navbar-nav .nav-item {
+    margin: 0 12px; 
+}
+
+.nav-link {
+    font-size: 1.2em;
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #007bff; 
+    color: #ffffff !important; 
+}
+
+.navbar-nav .nav-link.active {
+    background-color: #0056b3; 
+    color: #ffffff !important; 
+    font-weight: bold;
+}
+
+/* Hampurilaisvalikon nappi */
+.navbar-toggler {
+    border-radius: 50%; 
+    padding: 10px; 
+}
+
+
+.navbar-collapse {
+    border-radius: 8px; 
+}
+
+/* Etusivu */
+.container {
+    padding-top: 30px;
+}
+
+#etusivu {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('./Etusivu.jpg');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Sisällön asettelu */
+.content {
+    max-width: 700px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+#etusivu h1, #etusivu p {
+    margin: 0;
+}
+
+/* Osioiden asettelu */
+#osio1, #osio2, #osio3 {
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Varusteiden kuvien tyyli */
+.varuste-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Reittien navigointipalkki */
+#reittiNav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 30px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    gap: 10px;
+}
+
+#reittiNav .nav-pills .nav-link {
+    background-color: #007bff;
+    border: 1px solid #5c8fd7;
+    color: white;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#reittiNav.nav-pills .nav-link:hover {
+    background-color: #0056b3;
+}
+
+#reittiNav .nav-pills .nav-link.active {
+    background-color: #0056b3;
+}
+
+/* Reittien sisältöalue */
+.reitti-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 20px;
+}
+
+.reitti-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Korttien tyyli */
+.reitti-item {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff, #f0f3f5);
+    border-left: 5px solid #007bff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Otsikon ja tekstien parannukset */
+.reitti-item h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Fontin ja tekstin tyyli */
+.reitti-item p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.reitti-item h4::before {
+    content: "🌲";
+    margin-right: 8px;
+}
+
+/* Responsiivisuus */
+@media (max-width: 768px) {
+    
+    section {
+        scroll-margin-top: 80px; 
+    }
+
+    /* Lisää tilaa sivuille */
+    .container, .content, .varusteet-content, .reitti-container {
+        padding-left: 20px;  
+        padding-right: 20px; 
+    }
+
+    /* Varmistetaan, että kortit eivät mene reunaan */
+    .reitti-item {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1em;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    /* Kuvien pienentäminen */
+    .varuste-img {
+        height: 200px;
+    }
+
+    .image-container {
+        max-width: 100%;
+    }
+}
+
+/* Sliderin painikkeet */
+.btn-slider {
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+}
+
+.btn-slider:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Korttien tyyli */
+.varusteet-content .card {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: left;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff, #f0f3f5);
+    border-left: 5px solid #007bff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Osion 3 asettelu */
+.osio3-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 2000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.osio3-image-container img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    text-align: left;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+/* Nav-painikkeiden tyylit */
+.nav-pills .nav-link {
+    background-color: #007bff;
+    border: 1px solid #5c8fd7;
+    color: white;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #0056b3;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #0056b3;
+}
+
+#varautuminenNav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 30px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    gap: 10px;
+}
+
+/* Etiketti ja turvallisuus */
+.card.etiketti h3::before {
+    content: "🛡️";
+    margin-right: 8px;
+}
+
+/* Jokamiehenoikeudet */
+.card.jokamiehenoikeudet h3::before {
+    content: "🌲";
+    margin-right: 8px;
+}
+
+/* Kalastus */
+.card.kalastus h3::before {
+    content: "🎣";
+    margin-right: 8px;
+}
+
+/* Marjastus ja sienestys */
+.card.marjastus h3::before {
+    content: "🍄";
+    margin-right: 8px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    line-height: 1.3;
+}
+
+/* Responsiivisuus - pienemmille näytöille */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    .content {
+        font-size: 0.9em;
+        padding: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.4em;
+    }
+
+    .reitti-item {
+        padding: 15px;
+        margin: 10px;
+    }
+}
